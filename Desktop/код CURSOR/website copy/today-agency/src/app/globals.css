@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Local fonts extracted from the original SingleFile HTML (for 1:1 typography). */
+@font-face {
+  font-family: "GeistRoboto";
+  src: url("/fonts/GeistRoboto-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeistRoboto";
+  src: url("/fonts/GeistRoboto-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tilda uses GeistRoboto weights like 500; the source fonts bundled here are 600-ish.
+   We map both 500 and 600 to the same file to keep rendering consistent. */
+@font-face {
+  font-family: "GeistRoboto";
+  src: url("/fonts/GeistRoboto-600.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeistRoboto";
+  src: url("/fonts/GeistRoboto-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-brand-blue: #1C30E4;
+  --color-brand-blue-hover: #1226DA;
+  --color-brand-dark: #1E1E1E;
+  --color-brand-gray: #EAEAEA;
+  --color-brand-muted: #A5A5A5;
+
+  --font-sans: "GeistRoboto", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: var(--color-brand-dark);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-brand-blue);
+  color: #fff;
+}
