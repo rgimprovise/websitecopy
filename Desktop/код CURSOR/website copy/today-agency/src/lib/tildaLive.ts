@@ -4,7 +4,7 @@
  * executing remote JS inside our Next app.
  */
 export async function fetchTildaBody(url: string): Promise<string> {
-  const res = await fetch(url, { cache: "no-store" });
+  const res = await fetch(url, { cache: "force-cache" });
   if (!res.ok) {
     throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
   }

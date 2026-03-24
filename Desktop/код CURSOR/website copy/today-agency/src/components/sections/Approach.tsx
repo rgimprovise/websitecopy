@@ -1,6 +1,6 @@
 import { Section } from "../ui/Section";
 import { SectionLabel } from "../ui/SectionLabel";
-import { APPROACH_ITEMS } from "@/lib/constants";
+import { APPROACH_ITEMS, APPROACH_PRINCIPLES } from "@/lib/constants";
 import { Reveal } from "../ui/Reveal";
 
 export function Approach() {
@@ -19,18 +19,43 @@ export function Approach() {
       >
         <Reveal as="div">
           <h2 className="mb-4">
-            <SectionLabel className="font-[500]">наш подход</SectionLabel>
+            <SectionLabel className="font-[500]">подход</SectionLabel>
           </h2>
-          <p className="max-w-3xl font-[300] leading-[0.88] text-[32px] min-[900px]:text-[64px]">
-            как мы достигаем результатов.
+          <p className="max-w-3xl font-[300] leading-[0.92] text-[26px] min-[900px]:text-[46px]">
+            собираем рабочую среду, в которой понятны цифры, зоны ответственности и внедрение изменений.
           </p>
         </Reveal>
       </Section>
 
       {/* Tilda record-type=513: timeline + methodology cards */}
       <Section id="approach" bg="gray" paddingClassName="pt-0 pb-[90px]">
+        <div className="space-y-0">
+          {APPROACH_PRINCIPLES.map((title, i) => {
+            const num = String(i + 1).padStart(2, "0");
+            return (
+              <div key={title} className="py-2">
+                <Reveal as="div" delayMs={i * 120}>
+                  <div className="grid grid-cols-12 gap-4">
+                    <div className="col-span-2 pt-1">
+                      <SectionLabel className="font-[500]">{num}</SectionLabel>
+                    </div>
+                    <div className="col-span-10">
+                      <p className="font-[300] leading-[1.1] text-[22px] min-[900px]:text-[32px] min-[900px]:leading-[1.2]">
+                        {title}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+                {i !== APPROACH_PRINCIPLES.length - 1 && (
+                  <div className="mt-4 h-px bg-brand-dark/10" />
+                )}
+              </div>
+            );
+          })}
+        </div>
+
         <Reveal as="div" delayMs={160}>
-          <div className="border-t border-brand-dark/10">
+          <div className="mt-14 border-t border-brand-dark/10">
             {APPROACH_ITEMS.map((item) => (
               <div
                 key={item.number}
@@ -65,7 +90,7 @@ export function Approach() {
                       {item.bullets.map((bullet) => (
                         <li
                           key={bullet}
-                          className="flex items-start gap-3 text-[12px] leading-[1.35] text-brand-dark/80"
+                          className="flex items-start gap-3 text-[14px] leading-[1.4] text-brand-dark/80"
                         >
                           <span
                             aria-hidden="true"

@@ -36,8 +36,8 @@
 }
 
 @theme inline {
-  --color-brand-blue: #1C30E4;
-  --color-brand-blue-hover: #1226DA;
+  --color-brand-blue: #FF150E;
+  --color-brand-blue-hover: #E0120B;
   --color-brand-dark: #1E1E1E;
   --color-brand-gray: #EAEAEA;
   --color-brand-muted: #A5A5A5;
@@ -58,4 +58,42 @@ body {
 ::selection {
   background: var(--color-brand-blue);
   color: #fff;
+}
+
+/* Legal page prose styles */
+.legal-prose p {
+  margin-top: 0.75rem;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-brand-dark);
+}
+
+.legal-prose ul {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.legal-prose li {
+  margin-top: 0.35rem;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-brand-dark);
+}
+
+/* Page-load clip-path reveal: dark overlay shrinks into a circle, exposing content */
+@keyframes reveal-out {
+  0% {
+    clip-path: inset(0);
+  }
+  15% {
+    clip-path: inset(0);
+  }
+  100% {
+    clip-path: circle(0% at 50% 50%);
+  }
+}
+
+.animate-reveal-out {
+  animation: reveal-out 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }

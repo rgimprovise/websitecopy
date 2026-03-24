@@ -1,7 +1,7 @@
 import { Section } from "../ui/Section";
 import { SectionLabel } from "../ui/SectionLabel";
 import { Card } from "../ui/Card";
-import { SERVICES } from "@/lib/constants";
+import { SERVICE_DESCRIPTIONS, SERVICES, SERVICES_SECTION } from "@/lib/constants";
 import { Reveal } from "../ui/Reveal";
 
 export function Services() {
@@ -14,13 +14,10 @@ export function Services() {
       >
         <Reveal as="div">
           <h2 className="mb-4">
-            <SectionLabel className="font-[500]">
-              что мы делаем
-            </SectionLabel>
+            <SectionLabel className="font-[500]">{SERVICES_SECTION.label}</SectionLabel>
           </h2>
-          <p className="max-w-[980px] font-[300] leading-[0.88] text-[32px] min-[900px]:text-[58px]">
-            можем заменить целый отдел, усилить команду или взять
-            отдельные задачи по маркетингу или продажам.
+          <p className="max-w-[980px] font-[300] leading-[0.92] text-[26px] min-[900px]:text-[44px]">
+            {SERVICES_SECTION.lead}
           </p>
         </Reveal>
       </Section>
@@ -31,17 +28,35 @@ export function Services() {
         bg="gray"
         paddingClassName="pt-[10px] pb-[20px] sm:pt-[16px] sm:pb-[28px]"
       >
-        <div className="grid grid-cols-2 gap-x-6 gap-y-7 md:grid-cols-4 md:gap-x-8 md:gap-y-8">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {SERVICES.map((service, i) => (
             <Reveal key={service} as="div" delayMs={i * 160}>
-              <Card compact className="pt-[9px] pb-0">
-                <p className="text-[13px] font-[500] uppercase leading-[1.15] tracking-[0.02em]">
-                  ◼ {service}
+              <Card className="pt-4 pb-5">
+                <p className="text-[18px] font-[500] leading-[1.15] text-brand-dark">
+                  {service}
+                </p>
+                <p className="mt-3 text-[15px] leading-[1.4] text-brand-dark/80">
+                  {SERVICE_DESCRIPTIONS[i]}
                 </p>
               </Card>
             </Reveal>
           ))}
         </div>
+
+        <Reveal as="div" delayMs={220}>
+          <a
+            href="#contacts"
+            className="mt-8 inline-flex items-center gap-3 bg-brand-blue px-6 py-4 text-sm font-light text-white transition-colors hover:bg-brand-blue-hover"
+          >
+            <img
+              src="/images/tild3039-3764-4233-a135-323164323633__corner-down-right.svg"
+              alt=""
+              aria-hidden="true"
+              className="h-4 w-4 brightness-0 invert"
+            />
+            обсудить проект
+          </a>
+        </Reveal>
       </Section>
     </>
   );

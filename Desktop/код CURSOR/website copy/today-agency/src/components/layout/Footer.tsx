@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "../ui/Container";
 import { ContactLink } from "../ui/ContactLink";
-import { FOOTER_NAV, CONTACT } from "@/lib/constants";
+import { BRAND, FOOTER_NAV, CONTACT, LEGAL } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -9,7 +9,7 @@ export function Footer() {
       <Container className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <Link href="/" className="mb-8 block text-xl font-medium tracking-tight">
-            today
+            {BRAND.fullName}
           </Link>
           <nav className="flex flex-col gap-3">
             {FOOTER_NAV.map((link) => (
@@ -17,11 +17,11 @@ export function Footer() {
                 {link.label}.
               </ContactLink>
             ))}
-            {/* Present on the original Tilda footer as labeled blocks (no reliable href in source HTML). */}
-            <span className="text-white/40">избранное.</span>
-            <span className="text-white/40">подкаст.</span>
-            <ContactLink href="/politics" className="mt-4 text-white/40">
-              Политика обработки персональных данных.
+            <ContactLink href="/privacy-policy" className="mt-4 text-white/40">
+              Политика конфиденциальности.
+            </ContactLink>
+            <ContactLink href="/user-agreement" className="text-white/40">
+              Пользовательское соглашение.
             </ContactLink>
           </nav>
         </div>
@@ -36,12 +36,6 @@ export function Footer() {
           <ContactLink href={`mailto:${CONTACT.email}`}>
             {CONTACT.email}
           </ContactLink>
-          <p className="text-sm leading-relaxed text-white/40">
-            {CONTACT.address}
-          </p>
-        </div>
-
-        <div className="flex flex-col gap-4">
           <ContactLink
             href={CONTACT.telegram}
             target="_blank"
@@ -52,11 +46,17 @@ export function Footer() {
             написать в Telegram
           </ContactLink>
         </div>
+
+        <div className="flex flex-col gap-4 text-sm leading-relaxed text-white/40">
+          <p>{LEGAL.name}</p>
+          <p>ИНН {LEGAL.inn}</p>
+          <p>ОГРНИП {LEGAL.ogrnip}</p>
+        </div>
       </Container>
 
       <Container className="mt-12 border-t border-white/10 pt-6">
         <p className="text-xs text-white/30">
-          © {new Date().getFullYear()} today agency
+          © {new Date().getFullYear()} {BRAND.fullName}
         </p>
       </Container>
     </footer>

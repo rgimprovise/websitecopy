@@ -28,13 +28,12 @@ export function Header() {
       }`}
     >
       <Container className="relative flex items-center justify-between py-3 sm:py-4 md:py-5">
-        <Link
-          href="/"
-          className={`text-xl font-medium tracking-tight transition-colors ${
-            scrolled ? "text-brand-dark" : "text-white"
-          }`}
-        >
-          today
+        <Link href="/" className="block">
+          <img
+            src={scrolled ? "/images/main-logo-dark.svg" : "/images/Main Logo.svg"}
+            alt="ALARCEV"
+            className="h-[36px] w-auto transition-opacity"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:absolute md:left-1/2 md:-translate-x-1/2 md:flex">

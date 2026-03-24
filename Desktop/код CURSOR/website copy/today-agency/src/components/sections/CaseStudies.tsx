@@ -12,7 +12,7 @@ export function CaseStudies() {
       paddingClassName="pt-0 pb-[30px] max-[480px]:pb-0"
     >
       <Reveal as="div" className="mb-12">
-        <SectionHeader label="кейсы">избранное.</SectionHeader>
+        <SectionHeader label="кейс">реальный проект.</SectionHeader>
       </Reveal>
 
       <Reveal as="div" delayMs={120}>
@@ -21,9 +21,9 @@ export function CaseStudies() {
             <Link
               key={cs.title}
               href={cs.slug ? `/cases/${cs.slug}` : "/cases"}
-              className="group grid overflow-hidden bg-brand-blue md:grid-cols-2"
+              className="group grid overflow-hidden bg-[#FF150E] md:grid-cols-2"
             >
-              <div className="relative h-[480px] w-full">
+              <div className="relative min-h-[480px] w-full">
                 <Image
                   src={cs.image}
                   alt={cs.title}
@@ -31,24 +31,40 @@ export function CaseStudies() {
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
+                {cs.logo && (
+                  <img
+                    src={cs.logo}
+                    alt=""
+                    className="absolute left-1/2 top-6 z-10 w-[216px] -translate-x-1/2"
+                  />
+                )}
               </div>
 
-              <div className="flex items-center bg-brand-blue px-7 py-8 md:px-10 md:py-10">
-                <div>
-                  <h3 className="font-[300] text-white text-[24px] leading-[1] min-[900px]:text-[40px] min-[900px]:leading-[1.2]">
-                    {cs.title}
-                  </h3>
+              <div className="flex flex-col justify-center bg-[#FF150E] px-7 py-8 md:px-10 md:py-10">
+                <h3 className="font-[300] text-white text-[24px] leading-[1] min-[900px]:text-[40px] min-[900px]:leading-[1.2]">
+                  {cs.title}
+                </h3>
 
-                  {cs.comingSoon ? (
-                    <div className="mt-4 text-[14px] font-[500] leading-[1.3] uppercase text-[#eaeaea]">
-                      [ скоро ]
-                    </div>
-                  ) : (
-                    <div className="mt-4 text-[14px] font-[500] leading-[1.3] uppercase text-[#eaeaea]">
-                      {cs.description}
-                    </div>
-                  )}
-                </div>
+                {cs.comingSoon ? (
+                  <div className="mt-4 text-[15px] font-[500] leading-[1.3] uppercase text-white/80">
+                    [ скоро ]
+                  </div>
+                ) : (
+                  <ul className="mt-6 space-y-3">
+                    {cs.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="flex items-start gap-3 text-[15px] leading-[1.4] text-white/85"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="mt-[7px] block h-[4px] w-[4px] shrink-0 bg-white"
+                        />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </Link>
           ))}
@@ -59,15 +75,15 @@ export function CaseStudies() {
         <div className="mt-14">
           <Link
             href="/cases"
-            className="inline-flex items-center gap-3 bg-brand-blue px-8 py-5 text-[28px] font-[400] leading-[1] text-white transition-colors hover:bg-brand-blue-hover max-[640px]:px-5 max-[640px]:py-3 max-[640px]:text-[16px]"
+            className="inline-flex items-center gap-3 bg-[#FF150E] px-8 py-5 text-[28px] font-[400] leading-[1] text-white transition-colors hover:bg-[#E0120B] max-[640px]:px-5 max-[640px]:py-3 max-[640px]:text-[16px]"
           >
             <img
               src="/images/tild3039-3764-4233-a135-323164323633__corner-down-right.svg"
               alt=""
               aria-hidden="true"
-              className="h-6 w-6 max-[640px]:h-4 max-[640px]:w-4"
+              className="h-6 w-6 brightness-0 invert max-[640px]:h-4 max-[640px]:w-4"
             />
-            все кейсы.
+            запросить кейс.
           </Link>
         </div>
       </Reveal>
