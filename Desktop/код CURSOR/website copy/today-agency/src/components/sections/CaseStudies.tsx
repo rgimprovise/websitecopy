@@ -75,8 +75,10 @@ export function CaseStudies() {
       <Container>
         <Reveal as="div" delayMs={220}>
           <div className="mt-8 sm:mt-14">
-            <Link
-              href="/cases"
+            <a
+              href="https://t.me/ALARCEVBOT"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#FF150E] px-5 py-3 text-[16px] font-[400] leading-[1] text-white transition-colors hover:bg-[#E0120B] sm:px-8 sm:py-5 sm:text-[28px]"
             >
               <img
@@ -86,7 +88,7 @@ export function CaseStudies() {
                 className="h-4 w-4 brightness-0 invert sm:h-6 sm:w-6"
               />
               запросить кейс.
-            </Link>
+            </a>
           </div>
         </Reveal>
       </Container>
