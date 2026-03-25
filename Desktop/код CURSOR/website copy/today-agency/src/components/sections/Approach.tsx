@@ -21,7 +21,7 @@ export function Approach() {
           <h2 className="mb-4">
             <SectionLabel className="font-[500]">подход</SectionLabel>
           </h2>
-          <p className="max-w-3xl font-[300] leading-[0.92] text-[26px] min-[900px]:text-[46px]">
+          <p className="max-w-3xl font-[300] leading-[1.05] text-[22px] sm:text-[26px] sm:leading-[0.92] min-[900px]:text-[46px]">
             собираем рабочую среду, в которой понятны цифры, зоны ответственности и внедрение изменений.
           </p>
         </Reveal>
@@ -35,11 +35,11 @@ export function Approach() {
             return (
               <div key={title} className="py-2">
                 <Reveal as="div" delayMs={i * 120}>
-                  <div className="grid grid-cols-12 gap-4">
-                    <div className="col-span-2 pt-1">
+                  <div className="flex gap-4 sm:gap-6">
+                    <div className="shrink-0 pt-1">
                       <SectionLabel className="font-[500]">{num}</SectionLabel>
                     </div>
-                    <div className="col-span-10">
+                    <div className="min-w-0">
                       <p className="font-[300] leading-[1.1] text-[22px] min-[900px]:text-[32px] min-[900px]:leading-[1.2]">
                         {title}
                       </p>

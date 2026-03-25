@@ -9,7 +9,7 @@ export function ContactCTA() {
     <>
       <section
         aria-hidden="true"
-        className="h-[306px]"
+        className="h-[160px] sm:h-[220px] md:h-[306px]"
         style={{
           background: "linear-gradient(to bottom, #EAEAEA, #FF150E)",
         }}

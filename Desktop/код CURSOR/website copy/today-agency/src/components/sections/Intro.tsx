@@ -10,7 +10,7 @@ export function Intro() {
         <h2 className="mb-4">
           <SectionLabel className="font-[500]">{INTRO_CONTENT.title}</SectionLabel>
         </h2>
-        <span className="block max-w-[980px] font-[300] leading-[0.92] text-[26px] min-[900px]:text-[44px]">
+        <span className="block max-w-[980px] font-[300] leading-[1.05] text-[22px] sm:text-[26px] sm:leading-[0.92] min-[900px]:text-[44px]">
           {INTRO_CONTENT.statement}
         </span>
       </Reveal>

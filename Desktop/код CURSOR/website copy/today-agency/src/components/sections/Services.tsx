@@ -16,7 +16,7 @@ export function Services() {
           <h2 className="mb-4">
             <SectionLabel className="font-[500]">{SERVICES_SECTION.label}</SectionLabel>
           </h2>
-          <p className="max-w-[980px] font-[300] leading-[0.92] text-[26px] min-[900px]:text-[44px]">
+          <p className="max-w-[980px] font-[300] leading-[1.05] text-[22px] sm:text-[26px] sm:leading-[0.92] min-[900px]:text-[44px]">
             {SERVICES_SECTION.lead}
           </p>
         </Reveal>

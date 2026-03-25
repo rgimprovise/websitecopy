@@ -12,7 +12,7 @@ export function Clients() {
           <h2 className="mb-4">
             <SectionLabel className="font-[500]">для кого</SectionLabel>
           </h2>
-          <p className="font-[300] leading-[0.92] text-[26px] min-[900px]:text-[46px] min-[900px]:leading-[0.92]">
+          <p className="font-[300] leading-[1.05] text-[22px] sm:text-[26px] sm:leading-[0.92] min-[900px]:text-[46px] min-[900px]:leading-[0.92]">
             мы работаем с компаниями, которым уже недостаточно «просто подрядчика».
           </p>
         </Reveal>
