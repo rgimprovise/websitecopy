@@ -2,8 +2,12 @@ import { Section } from "../ui/Section";
 import { SectionLabel } from "../ui/SectionLabel";
 import { Reveal } from "../ui/Reveal";
 import { BLOG_POSTS } from "@/lib/constants";
+import { fetchTenChatPosts } from "@/lib/fetchTenChat";
 
-export function Blog() {
+export async function Blog() {
+  const fetched = await fetchTenChatPosts();
+  const posts = fetched.length > 0 ? fetched : BLOG_POSTS;
+
   return (
     <Section id="blog" bg="gray" paddingClassName="pt-[60px] pb-[60px]">
       <Reveal as="div">
@@ -15,10 +19,14 @@ export function Blog() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid grid-cols-1 gap-0">
-        {BLOG_POSTS.map((post, i) => (
-          <Reveal key={post.externalUrl} as="div" delayMs={i * 100}>
+      {/* Vertically scrollable article carousel */}
+      <div
+        className="mt-12 max-h-[640px] overflow-y-auto pr-1 [scrollbar-color:#1e1e1e4d_transparent] [scrollbar-width:thin]"
+      >
+        <div className="grid grid-cols-1 gap-0">
+          {posts.map((post) => (
             <a
+              key={post.externalUrl}
               href={post.externalUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -29,7 +37,7 @@ export function Blog() {
                   <img
                     src={post.image}
                     alt=""
-                    className="w-full transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
               )}
@@ -39,22 +47,31 @@ export function Blog() {
                   <span className="text-[13px] font-[500] uppercase tracking-[0.15em] text-brand-muted">
                     {post.tag}
                   </span>
-                  <span className="mx-2 text-[13px] text-brand-muted">/</span>
-                  <span className="text-[13px] text-brand-muted">
-                    {post.date}
-                  </span>
+                  {post.date && (
+                    <>
+                      <span className="mx-2 text-[13px] text-brand-muted">
+                        /
+                      </span>
+                      <span className="text-[13px] text-brand-muted">
+                        {post.date}
+                      </span>
+                    </>
+                  )}
                 </div>
 
                 <h3 className="mt-3 text-[20px] font-[300] leading-[1.15] text-brand-dark transition-colors group-hover:text-brand-blue min-[900px]:text-[28px] min-[900px]:leading-[1.12]">
                   {post.title}
                 </h3>
-                <p className="mt-3 max-w-[640px] text-[15px] leading-[1.45] text-brand-dark/70">
-                  {post.excerpt}
-                </p>
+
+                {post.excerpt && (
+                  <p className="mt-3 max-w-[640px] text-[15px] leading-[1.45] text-brand-dark/70">
+                    {post.excerpt}
+                  </p>
+                )}
               </div>
             </a>
-          </Reveal>
-        ))}
+          ))}
+        </div>
       </div>
     </Section>
   );
