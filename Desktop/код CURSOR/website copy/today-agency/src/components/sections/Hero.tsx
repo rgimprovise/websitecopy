@@ -1,4 +1,5 @@
 import { Reveal } from "../ui/Reveal";
+import { OpenLeadModalButton } from "../ui/OpenLeadModalButton";
 import { HERO_CONTENT } from "@/lib/constants";
 
 export function Hero() {
@@ -38,24 +39,12 @@ export function Hero() {
             </Reveal>
 
             <Reveal delayMs={150} as="div" className="mt-10">
-              <a
-                href="https://t.me/ALARCEVBOT"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-white px-6 py-4 text-sm font-light text-brand-blue sm:px-7 sm:py-4"
-              >
-                <img
-                  src="/images/tild3036-6466-4534-b034-363463323036__icon_tg_blue.svg"
-                  alt=""
-                  aria-hidden="true"
-                  className="h-4 w-4"
-                />
+              <OpenLeadModalButton className="inline-flex items-center gap-3 bg-white px-6 py-4 text-sm font-light text-brand-blue transition-colors hover:bg-[#f2f2f2] sm:px-7 sm:py-4">
                 {HERO_CONTENT.cta}
-              </a>
+              </OpenLeadModalButton>
             </Reveal>
           </div>
         </div>
-
       </div>
 
       {/* Gradient divider — behind interactive content */}
