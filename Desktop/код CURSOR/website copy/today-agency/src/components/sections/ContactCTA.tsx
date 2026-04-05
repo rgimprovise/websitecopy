@@ -1,7 +1,6 @@
 "use client";
 
 import { Container } from "../ui/Container";
-import { OpenLeadModalButton } from "../ui/OpenLeadModalButton";
 import { CONTACT } from "@/lib/constants";
 import { Reveal } from "../ui/Reveal";
 
@@ -35,9 +34,14 @@ export function ContactCTA() {
               {CONTACT.email}
             </a>
 
-            <OpenLeadModalButton className="inline-flex h-[66px] w-[382px] max-w-full items-center justify-center bg-white text-[28px] font-[400] leading-[1.1] tracking-[-0.5px] text-[#1e1e1e] transition-colors hover:bg-[#f2f2f2] max-[640px]:h-[42px] max-[640px]:w-[210px] max-[640px]:text-[14px] max-[640px]:tracking-[0]">
-              оставить заявку.
-            </OpenLeadModalButton>
+            <a
+              href={CONTACT.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-[66px] w-[382px] max-w-full items-center justify-center bg-white text-[28px] font-[400] leading-[1.1] tracking-[-0.5px] text-[#1e1e1e] transition-colors hover:bg-[#f2f2f2] max-[640px]:h-[42px] max-[640px]:w-[210px] max-[640px]:text-[14px] max-[640px]:tracking-[0]"
+            >
+              написать в telegram.
+            </a>
           </Reveal>
         </Container>
       </section>

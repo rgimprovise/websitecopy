@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../ui/Container";
 import { SectionHeader } from "../ui/SectionHeader";
-import { OpenLeadModalButton } from "../ui/OpenLeadModalButton";
 import { CASE_STUDIES } from "@/lib/constants";
 import { Reveal } from "../ui/Reveal";
 
@@ -76,7 +75,12 @@ export function CaseStudies() {
       <Container>
         <Reveal as="div" delayMs={220}>
           <div className="mt-8 sm:mt-14">
-            <OpenLeadModalButton className="inline-flex items-center gap-3 bg-[#FF150E] px-5 py-3 text-[16px] font-[400] leading-[1] text-white transition-colors hover:bg-[#E0120B] sm:px-8 sm:py-5 sm:text-[28px]">
+            <a
+              href="https://t.me/ALARCEVBOT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#FF150E] px-5 py-3 text-[16px] font-[400] leading-[1] text-white transition-colors hover:bg-[#E0120B] sm:px-8 sm:py-5 sm:text-[28px]"
+            >
               <img
                 src="/images/tild3039-3764-4233-a135-323164323633__corner-down-right.svg"
                 alt=""
@@ -84,7 +88,7 @@ export function CaseStudies() {
                 className="h-4 w-4 brightness-0 invert sm:h-6 sm:w-6"
               />
               запросить кейс.
-            </OpenLeadModalButton>
+            </a>
           </div>
         </Reveal>
       </Container>

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { LeadModalProvider } from "@/context/LeadModalContext";
-import { LeadModal } from "@/components/ui/LeadModal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -46,12 +44,9 @@ ym(108224471,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",
             />
           </div>
         </noscript>
-        <LeadModalProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <LeadModal />
-        </LeadModalProvider>
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

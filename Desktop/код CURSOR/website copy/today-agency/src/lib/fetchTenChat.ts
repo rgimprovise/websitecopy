@@ -68,7 +68,6 @@ async function fetchArticle(url: string): Promise<BlogPost | null> {
         "User-Agent":
           "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
       },
-      next: { revalidate: 3600 },
       signal: AbortSignal.timeout(12000),
     });
     if (!res.ok) return null;
@@ -106,7 +105,6 @@ export async function fetchTenChatPosts(): Promise<BlogPost[]> {
         "User-Agent":
           "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
       },
-      next: { revalidate: 3600 },
       signal: AbortSignal.timeout(15000),
     });
     if (!res.ok) return [];
