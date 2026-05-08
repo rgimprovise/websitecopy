@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
-  { label: "услуги", href: "#services" },
-  { label: "кейсы", href: "#cases" },
-  { label: "наш подход", href: "#approach" },
-  { label: "блог", href: "#blog" },
+  { label: "услуги", href: "/#services" },
+  { label: "кейсы", href: "/#cases" },
+  { label: "наш подход", href: "/#approach" },
+  { label: "блог", href: "/#blog" },
 ] as const;
 
 export const BRAND = {
@@ -144,12 +144,12 @@ export const LEGAL = {
 } as const;
 
 export const FOOTER_NAV = [
-  { label: "услуги", href: "#services" },
-  { label: "кейсы", href: "#cases" },
-  { label: "наш подход", href: "#approach" },
-  { label: "блог", href: "#blog" },
-  { label: "faq", href: "#faq" },
-  { label: "контакты", href: "#contacts" },
+  { label: "услуги", href: "/#services" },
+  { label: "кейсы", href: "/#cases" },
+  { label: "наш подход", href: "/#approach" },
+  { label: "блог", href: "/#blog" },
+  { label: "faq", href: "/#faq" },
+  { label: "контакты", href: "/#contacts" },
 ] as const;
 
 export const AUDIENCE = [

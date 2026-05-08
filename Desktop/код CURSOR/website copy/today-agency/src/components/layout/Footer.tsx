@@ -23,6 +23,9 @@ export function Footer() {
             <ContactLink href="/user-agreement" className="text-white/40">
               Пользовательское соглашение.
             </ContactLink>
+            <ContactLink href="/a-tabs/" className="mt-4 text-white/40">
+              A-TABS — расширение Chrome.
+            </ContactLink>
           </nav>
         </div>
 

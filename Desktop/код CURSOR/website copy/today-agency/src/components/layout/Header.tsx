@@ -52,7 +52,7 @@ export function Header() {
 
         <div className="hidden md:ml-auto md:block">
           <Button
-            href="#contacts"
+            href="/#contacts"
             variant={scrolled ? "primary" : "outline-light"}
           >
             контакты
@@ -102,7 +102,7 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="#contacts"
+            href="/#contacts"
             onClick={() => setMenuOpen(false)}
             className="text-3xl font-light text-white"
           >
