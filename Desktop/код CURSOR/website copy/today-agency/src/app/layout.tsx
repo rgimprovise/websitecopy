@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { HideOnAtabs } from "@/components/layout/HideOnAtabs";
-import { LeadModalProvider } from "@/context/LeadModalContext";
-import { LeadModal } from "@/components/ui/LeadModal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -47,12 +42,7 @@ ym(108224471,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",
             />
           </div>
         </noscript>
-        <LeadModalProvider>
-          <HideOnAtabs><Header /></HideOnAtabs>
-          <main className="flex-1">{children}</main>
-          <HideOnAtabs><Footer /></HideOnAtabs>
-          <LeadModal />
-        </LeadModalProvider>
+        {children}
       </body>
     </html>
   );
